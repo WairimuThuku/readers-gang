@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">readers gang</string>
+    <string name="search_hint">Input title or author</string>
+</resources>
