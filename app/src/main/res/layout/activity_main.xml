@@ -1,18 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context="ui.MainActivity">
 
     <TextView
+        android:id="@+id/homeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:text="Get yourself the most intriguing novels at a much considerable price."
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/homeMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/homeTitle">
+
+        <ImageView
+            android:id="@+id/famous5"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/famous_5" />
+
+        <Button
+            android:id="@+id/buttonSayCheese"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/famous5"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="48dp"
+            android:text="Purchase"
+            android:textSize="12dp"
+            android:background="#FFBB33"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/secret7"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/famous5"
+            app:srcCompat="@drawable/secret7" />
+
+        <Button
+            android:id="@+id/buttonDarkPlaces"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/secret7"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/famous5"
+            android:text="Purchase"
+            android:textSize="12dp"
+            android:background="#FFBB33"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/twilight"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/buttonSayCheese"
+            android:layout_marginTop="37dp"
+            app:srcCompat="@drawable/twilight" />
+
+        <Button
+            android:id="@+id/buttonShining"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/twilight"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="15dp"
+            android:text="Purchase"
+            android:textSize="12dp"
+            android:background="#FFBB33"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/wimpykid"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@+id/secret7"
+            android:layout_marginTop="81dp"
+            android:layout_toRightOf="@+id/twilight"
+            app:srcCompat="@drawable/wimpykid" />
+
+        <Button
+            android:id="@+id/buttonBlandish"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_below="@+id/wimpykid"
+            android:layout_toRightOf="@id/twilight"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="48dp"
+            android:text="Purchase"
+            android:textSize="12dp"
+            android:background="#FFBB33"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/homeNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/homeLogo"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                app:srcCompat="@drawable/homelogo"/>
+
+            <TextView
+                android:id="@+id/homeLogoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/homeLogo"
+                android:layout_marginLeft="21dp"
+                android:text="Home"
+                android:textColor="@color/black"
+                android:textSize="14dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/searchNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/searchLogo"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/searchlogo"/>
+
+            <TextView
+                android:id="@+id/searchLogoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searchLogo"
+                android:layout_centerHorizontal="true"
+                android:text="Search"
+                android:textColor="@color/black"
+                android:textSize="14dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/loginNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:paddingRight="15dp">
+
+            <ImageView
+                android:id="@+id/loginLogo"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/loginlogo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginLogo"
+                android:text="Sign In"
+                android:textColor="@color/black"
+                android:textSize="14dp"/>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
