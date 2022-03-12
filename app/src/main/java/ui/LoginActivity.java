@@ -13,22 +13,28 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.myapp.readersgang.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     public static final String TAG = LoginActivity.class.getSimpleName();
 
-    @BindView(R.id.emailEditText)
-    EditText mEmailEditText;
+    @BindView(R.id.emailEditText) EditText mEmailEditText;
     @BindView(R.id.passwordEditText) EditText mPasswordEditText;
-    @BindView(R.id.registerTextView)
-    TextView mRegisterTextView;
-    @BindView(R.id.signInButton)
-    Button mSignInButton;
-    @BindView(R.id.firebaseProgressBar)
-    ProgressBar mSignInProgressBar;
+    @BindView(R.id.registerTextView) TextView mRegisterTextView;
+    @BindView(R.id.signInButton) Button mSignInButton;
+    @BindView(R.id.firebaseProgressBar) ProgressBar mSignInProgressBar;
     @BindView(R.id.loadingTextView) TextView mLoadingSignUp;
 
-    //private FirebaseAuth mAuth;
-    //private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +45,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mRegisterTextView.setOnClickListener(this);
         mSignInButton.setOnClickListener(this);
 
-       // mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         createAuthStateListener();
     }
 
@@ -83,7 +89,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         else {
             showProgressBar();
         }
-       // mAuth.signInWithEmailAndPassword(email, password)
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
