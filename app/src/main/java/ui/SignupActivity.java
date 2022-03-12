@@ -13,23 +13,29 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.myapp.readersgang.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = SignupActivity.class.getSimpleName();
 
-    @BindView(R.id.nameEditText)
-    EditText mNameEditText;
+    @BindView(R.id.nameEditText) EditText mNameEditText;
     @BindView(R.id.emailEditText) EditText mEmailEditText;
     @BindView(R.id.passwordEditText) EditText mPasswordEditText;
-    @BindView(R.id.signUpButton)
-    Button mSignUpButton;
-    @BindView(R.id.haveAccountTextView)
-    TextView mHaveAccountTextView;
-    @BindView(R.id.firebaseProgressBar)
-    ProgressBar mSignInProgressBar;
+    @BindView(R.id.signUpButton) Button mSignUpButton;
+    @BindView(R.id.haveAccountTextView) TextView mHaveAccountTextView;
+    @BindView(R.id.firebaseProgressBar) ProgressBar mSignInProgressBar;
     @BindView(R.id.loadingTextView) TextView mLoadingSignUp;
 
-    //private FirebaseAuth mAuth;
-    //private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +105,21 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         });
     }
 
-    //
+    private void createAuthStateListener() {
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                final FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null) {
+                    Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        };
+    }
 
     @Override
     public void onStart() {
@@ -139,3 +159,5 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         return true;
     }
 }
+
+// 34:EF:D5:54:C7:8C:78:CA:51:4C:F7:64:FA:4F:DF:58:54:B0:7B:51
