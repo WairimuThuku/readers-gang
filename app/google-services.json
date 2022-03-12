@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "242074525750",
+    "project_id": "readersgang-4ecaf",
+    "storage_bucket": "readersgang-4ecaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242074525750:android:0076c280bb28b2e03df897",
+        "android_client_info": {
+          "package_name": "com.example.readersgang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242074525750-2bjf8mhobv4jmakvroro215o8cp9fohs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.readersgang",
+            "certificate_hash": "34efd554c78c78ca514cf764fa4fdf5854b07b51"
+          }
+        },
+        {
+          "client_id": "242074525750-97aik3aeqgeej48m8c821a1nshaakfqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZiCuK_uae8f0tHNdKxdZbiyA4hFfxQiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242074525750-97aik3aeqgeej48m8c821a1nshaakfqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
