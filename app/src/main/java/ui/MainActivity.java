@@ -11,12 +11,16 @@ import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.myapp.readersgang.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    @BindView(R.id.searchNavigation)
-    RelativeLayout mSearchNavigation;
+    @BindView(R.id.searchNavigation) RelativeLayout mSearchNavigation;
     @BindView(R.id.loginNavigation) RelativeLayout mLoginNavigation;
-    @BindView(R.id.buttonSayCheese)
-    Button mSayCheeseButton;
+    @BindView(R.id.buttonSayCheese) Button mSayCheeseButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,4 +63,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    //
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+}
