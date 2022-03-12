@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="bookTitle" type="id" />
+    <item name="bookAuthor" type="id" />
+    <item name="publisher" type="id" />
+    <item name="publishedDate" type="id" />
+    <item name="description" type="id" />
+</resources>
