@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.myapp.readersgang">
+    package="com.example.readersgang">
 
     <uses-feature
         android:name="android.hardware.camera.any"
@@ -22,34 +22,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReadersGang">
 
-    <activity android:name="ui.LoginActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+        <activity android:name="ui.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-    <activity android:name="ui.SignupActivity">
+        <activity android:name="ui.SignupActivity">
 
-    </activity>
+        </activity>
 
-    <activity android:name="ui.SearchActivity"
-        android:launchMode="singleTop">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="ui.MainActivity" />
-        <meta-data
-            android:name="android.app.searchable"
-            android:resource="@xml/searchable"/>
+        <activity android:name="ui.SearchActivity"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="ui.MainActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
 
-        <intent-filter>
-            <action android:name="android.intent.action.SEARCH" />
-        </intent-filter>
-    </activity>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
 
-    <activity
-        android:name="ui.MainActivity">
-    </activity>
+        <activity
+            android:name="ui.MainActivity">
+        </activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -62,8 +62,5 @@
         </provider>
 
     </application>
-
-
-
 
 </manifest>
