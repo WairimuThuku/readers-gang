@@ -5,4 +5,5 @@
     <item name="publisher" type="id" />
     <item name="publishedDate" type="id" />
     <item name="description" type="id" />
+    <item name="cameraImageView" type="id" />
 </resources>
